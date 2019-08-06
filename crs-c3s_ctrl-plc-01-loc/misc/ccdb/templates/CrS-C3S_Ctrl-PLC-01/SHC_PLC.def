@@ -1,0 +1,47 @@
+###################################### SHC Systems ########################################
+##############################  Safety Helium Collector System   ##########################
+##                         			   PLC Control
+##
+##############################         Version: 1.0           #############################
+# Author:  Saeed Haghtalab
+# Date:    17-07-2018
+# Version: v1.0
+
+
+############################
+#  STATUS BLOCK
+############################ 
+define_status_block()
+
+#Operation modes
+add_digital("OpMode_Manual",           PV_DESC="Operation Mode Manual",                PV_ONAM="True",           PV_ZNAM="False")
+add_digital("OpMode_Auto",             PV_DESC="Operation Mode Auto",                  PV_ONAM="True",           PV_ZNAM="False")
+add_digital("OpMode_AutoBeam",         PV_DESC="Operation Mode Auto Beam",             PV_ONAM="True",           PV_ZNAM="False")
+add_digital("OpMode_AutoMaint",        PV_DESC="Operation Mode Auto Maintenance",      PV_ONAM="True",           PV_ZNAM="False")
+
+add_digital("Lock_OpMode",             PV_DESC="Lock Operation Mode",                  PV_ONAM="Locked",         PV_ZNAM="Unlocked")
+
+add_digital("GlobalAlarm",             PV_DESC="Global Alarm",                         PV_ONAM="True",           PV_ZNAM="False")
+add_digital("Simulation",              PV_DESC="Simulation Mode",                      PV_ONAM="True",           PV_ZNAM="False")
+
+add_analog("GroupAlarmsCount",         "INT",                                          PV_DESC="Number of Group Alarms")
+
+
+
+############################
+#  COMMAND BLOCK
+############################ 
+define_command_block()
+
+#OPI buttons
+add_digital("Cmd_LockOpModeOn",        PV_DESC="CMD: Turn Mode-Lock ON")
+add_digital("Cmd_LockOpModeOff",       PV_DESC="CMD: Turn Mode-Lock OFF")
+
+add_digital("Cmd_OpModeManual",        PV_DESC="CMD: Manual Mode Operation")
+add_digital("Cmd_OpModeAuto",          PV_DESC="CMD: Auto Mode Operation")
+add_digital("Cmd_OpAutoBeam",          PV_DESC="CMD: Auto Beam Mode")
+add_digital("Cmd_OpAutoMaint",         PV_DESC="CMD: Auto Maintenance Mode")
+
+add_digital("Cmd_AutoAll",             PV_DESC="CMD: Change all valves to Auto mode")
+
+add_digital("Cmd_GlobalAlarmAck",      PV_DESC="CMD: Acknowledge all valve's Alarm")

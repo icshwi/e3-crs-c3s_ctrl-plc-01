@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>PV_VALVE_BlockIcon_1</name>
+  <width>85</width>
+  <height>75</height>
+  <widget type="group" version="2.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <width>85</width>
+    <height>75</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="symbol" version="2.0.0">
+      <name>WID_CenterIcon_1</name>
+      <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:ValveColor</pv_name>
+      <symbols>
+        <symbol>symbols/custom_v02/valve solenoid/valve_solenoid_CLOSED_w@64.png</symbol>
+        <symbol>symbols/custom_v02/valve solenoid/valve_solenoid_OK@64.png</symbol>
+        <symbol>symbols/custom_v02/valve solenoid/valve_solenoid_NEUTRAL@64.png</symbol>
+        <symbol>symbols/custom_v02/valve solenoid/valve_solenoid_BLUE@64.png</symbol>
+        <symbol>symbols/custom_v02/valve solenoid/valve_solenoid_NOT_CONTROLED@64.png</symbol>
+      </symbols>
+      <y>10</y>
+      <width>50</width>
+      <height>50</height>
+      <rotation>90.0</rotation>
+      <actions execute_as_one="true">
+      </actions>
+      <rules>
+        <rule name="Tooltip" prop_id="tooltip" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>Valve State Invalid</value>
+          </exp>
+          <exp bool_exp="pv0 == 1">
+            <value>Valve Opened</value>
+          </exp>
+          <exp bool_exp="pv0 == 2">
+            <value>Valve Closed</value>
+          </exp>
+          <exp bool_exp="pv0 == 3">
+            <value>Valve Opening</value>
+          </exp>
+          <exp bool_exp="pv0 == 4">
+            <value>Valve Closing</value>
+          </exp>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:ValveColor</pv_name>
+        </rule>
+      </rules>
+      <tooltip>Valve Position</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>WID_AUTMANIcon_3</name>
+      <text>A</text>
+      <x>55</x>
+      <y>15</y>
+      <width>17</width>
+      <height>39</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="25.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="TextRule" prop_id="text" out_exp="false">
+          <exp bool_exp="pv0 == true">
+            <value>A</value>
+          </exp>
+          <exp bool_exp="pv1 == true">
+            <value>M</value>
+          </exp>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:OpMode_Auto</pv_name>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:OpMode_Manual</pv_name>
+        </rule>
+        <rule name="ColorRule" prop_id="foreground_color" out_exp="false">
+          <exp bool_exp="pv0 == true">
+            <value>
+              <color name="Text" red="25" green="25" blue="25">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv1 == true">
+            <value>
+              <color name="RED" red="252" green="13" blue="27">
+              </color>
+            </value>
+          </exp>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:OpMode_Auto</pv_name>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:OpMode_Manual</pv_name>
+        </rule>
+      </rules>
+      <tooltip>Operation Mode indicator</tooltip>
+    </widget>
+    <widget type="symbol" version="2.0.0">
+      <name>WID_AlarmIcon_2</name>
+      <symbols>
+        <symbol>symbols/custom_v02/error@32.png</symbol>
+      </symbols>
+      <x>30</x>
+      <width>20</width>
+      <height>20</height>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="VisibilityRule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0 == true">
+            <value>true</value>
+          </exp>
+          <exp bool_exp="pv0 == false">
+            <value>false</value>
+          </exp>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:GroupAlarm</pv_name>
+        </rule>
+      </rules>
+      <tooltip>Alarm event occured!</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="open_display">
+          <file>PV_VALVE_Faceplate.bob</file>
+          <macros>
+            <Dev>$(WIDDev)</Dev>
+            <Dis>$(WIDDis)</Dis>
+            <Index>$(WIDIndex)</Index>
+            <SecSub>$(WIDSecSub)</SecSub>
+          </macros>
+          <target>standalone</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text></text>
+      <x>55</x>
+      <y>54</y>
+      <width>20</width>
+      <height>20</height>
+      <tooltip>Open FacePlate</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <x>33</x>
+      <y>28</y>
+      <width>13</width>
+      <height>13</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Color" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0=1">
+            <value>
+              <color name="GREEN" red="61" green="216" blue="61">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv1=1">
+            <value>
+              <color name="WARNING" red="252" green="242" blue="17">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0==0 || pv1==0">
+            <value>
+              <color name="BACKGROUND" red="220" green="225" blue="221">
+              </color>
+            </value>
+          </exp>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:OpenSolenoid</pv_name>
+          <pv_name>${WIDSecSub}:${WIDDis}-${WIDDev}-${WIDIndex}:CloseSolenoid</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+</display>

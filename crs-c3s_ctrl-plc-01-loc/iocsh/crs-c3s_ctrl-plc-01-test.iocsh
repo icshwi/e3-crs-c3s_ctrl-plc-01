@@ -1,0 +1,7 @@
+
+# @field crs-c3s_ctrl-plc-01_VERSION
+# @runtime YES
+
+
+# Load plc interface database
+dbLoadRecords("crs-c3s_ctrl-plc-01-test.db", "MODVERSION=$(crs-c3s_ctrl-plc-01_VERSION)")

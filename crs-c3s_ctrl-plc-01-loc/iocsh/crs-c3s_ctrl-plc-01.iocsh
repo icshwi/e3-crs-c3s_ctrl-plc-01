@@ -1,0 +1,33 @@
+
+# @field IPADDR
+# @type STRING
+# PLC IP address
+
+# @field RECVTIMEOUT
+# @type INTEGER
+# PLC->EPICS receive timeout (ms), should be longer than frequency of PLC SND block trigger (REQ input)
+
+# @field crs-c3s_ctrl-plc-01_VERSION
+# @runtime YES
+
+
+# S7 port           : 2000
+# Input block size  : 3292 bytes
+# Output block size : 0 bytes
+# Endianness        : BigEndian
+s7plcConfigure("crs-c3s_ctrl-plc-01", $(IPADDR), 2000, 3292, 0, 1, $(RECVTIMEOUT), 0)
+
+# Modbus port       : 502
+drvAsynIPPortConfigure("crs-c3s_ctrl-plc-01", $(IPADDR):502, 0, 0, 1)
+
+# Link type         : TCP/IP (0)
+modbusInterposeConfig("crs-c3s_ctrl-plc-01", 0, $(RECVTIMEOUT), 0)
+
+# Slave address     : 0
+# Function code     : 16 - Write Multiple Registers
+# Addressing        : Absolute (-1)
+# Data segment      : 2 words
+drvModbusAsynConfigure("crs-c3s_ctrl-plc-01write", "crs-c3s_ctrl-plc-01", 0, 16, -1, 2, 0, 0, "S7-1500")
+
+# Load plc interface database
+dbLoadRecords("crs-c3s_ctrl-plc-01.db", "PLCNAME=crs-c3s_ctrl-plc-01, MODVERSION=$(crs-c3s_ctrl-plc-01_VERSION)")

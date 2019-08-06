@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>PV_VALVE_Faceplate</name>
+  <width>1000</width>
+  <height>560</height>
+  <scripts>
+    <script file="DisableSwitchFacePlate.js">
+      <pv_name>loc://SomePV</pv_name>
+    </script>
+  </scripts>
+  <widget type="rectangle" version="2.0.0">
+    <name>Header Bar</name>
+    <width>1000</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="0" blue="255" alpha="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>LB_HeaderPVName</name>
+    <text>${SecSub}:${Dis}-${Dev}-${Index}</text>
+    <x>20</x>
+    <width>715</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group.status_1</name>
+    <x>41</x>
+    <y>90</y>
+    <height>340</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>group.status.border_1</name>
+      <width>300</width>
+      <height>330</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>group.status.background_1</name>
+      <x>5</x>
+      <y>35</y>
+      <width>290</width>
+      <height>289</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="PRIMARY-GROUP-BORDER" red="151" green="188" blue="202">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_Status_1</name>
+      <text>STATUS</text>
+      <width>300</width>
+      <height>35</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="GRAY-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_Status_Position_1</name>
+      <text>Valve Position</text>
+      <x>15</x>
+      <y>50</y>
+      <width>270</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TEXT" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_Opened_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Opened</pv_name>
+      <x>100</x>
+      <y>85</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>Valve position</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_Opened_1</name>
+      <text>OPENED</text>
+      <x>135</x>
+      <y>85</y>
+      <width>60</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_Closed_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Closed</pv_name>
+      <x>100</x>
+      <y>145</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>Valve position</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_Closed_1</name>
+      <text>CLOSED</text>
+      <x>135</x>
+      <y>145</y>
+      <width>60</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_Status_Solenoid_1</name>
+      <text>Solenoid</text>
+      <x>15</x>
+      <y>182</y>
+      <width>270</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="TEXT" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_OpenSolenoid_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpenSolenoid</pv_name>
+      <x>100</x>
+      <y>217</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>Valve solenoid state</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_OpenSolenoid_1</name>
+      <text>OPEN</text>
+      <x>135</x>
+      <y>217</y>
+      <width>143</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_CloseSolenoid_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:CloseSolenoid</pv_name>
+      <x>100</x>
+      <y>252</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>Valve solenoid state</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_CloseSolenoid_1</name>
+      <text>CLOSE </text>
+      <x>135</x>
+      <y>252</y>
+      <width>143</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_ALM_ClosingTimeOut_2</name>
+      <text>Solenoid Pulse Duration</text>
+      <x>15</x>
+      <y>291</y>
+      <width>163</width>
+      <height>25</height>
+      <foreground_color>
+        <color name="TEXT" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>The pulse duration applied to valve solenoid. This parameter is read-only and can be changed in PLC.</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>TEXT_ClosingTime_2</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:SolPulseDuration</pv_name>
+      <x>195</x>
+      <y>291</y>
+      <width>85</width>
+      <height>25</height>
+      <font>
+        <font name="TINY-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-BORDER" red="121" green="121" blue="121">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)
+The pulse duration applied to valve solenoid. This parameter is read-only and can be changed in PLC.</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_Closed_2</name>
+      <text>Moving</text>
+      <x>135</x>
+      <y>115</y>
+      <width>60</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_Closed_2</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Moving</pv_name>
+      <x>100</x>
+      <y>115</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>Valve position</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group.op.modes_1</name>
+    <x>351</x>
+    <y>90</y>
+    <height>340</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>group.op.modes.border_1</name>
+      <width>300</width>
+      <height>330</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>group.op.modes.background_1</name>
+      <x>5</x>
+      <y>35</y>
+      <width>289</width>
+      <height>289</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="PRIMARY-GROUP-BORDER" red="151" green="188" blue="202">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_OP_MODES_1</name>
+      <text>OP MODES</text>
+      <width>300</width>
+      <height>35</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="GRAY-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_Auto_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpMode_Auto</pv_name>
+      <x>100</x>
+      <y>50</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>$(pv_name)
+Automatic operation mode.</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_STAT_AUTO_1</name>
+      <text>AUTO</text>
+      <x>135</x>
+      <y>50</y>
+      <width>60</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>Automatic operation mode.</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_Manual_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpMode_Manual</pv_name>
+      <x>100</x>
+      <y>85</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <tooltip>$(pv_name)
+Manual operation mode.</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_STAT_MANUAL_1</name>
+      <text>MANUAL</text>
+      <x>135</x>
+      <y>85</y>
+      <width>60</width>
+      <height>25</height>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>Manual operation mode.</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_MESSAGES_1</name>
+      <text>MESSAGES</text>
+      <x>5</x>
+      <y>160</y>
+      <width>290</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="GRAY-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>MSG_InhibitMan_1</name>
+      <text>- Change Mode is Locked</text>
+      <x>15</x>
+      <y>205</y>
+      <width>270</width>
+      <foreground_color>
+        <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="Visibility rule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pv0 == 1">
+            <value>true</value>
+          </exp>
+          <pv_name>CrS-C3S:Ctrl-PLC-01:Lock_OpMode</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>MSG_InhibitMan_2</name>
+      <text>- Simulation Mode is ON</text>
+      <x>15</x>
+      <y>229</y>
+      <width>270</width>
+      <foreground_color>
+        <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="Visibility rule" prop_id="visible" out_exp="false">
+          <exp bool_exp="pv0 == 0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pv0 == 1">
+            <value>true</value>
+          </exp>
+          <pv_name>CrS-C3S:Ctrl-PLC-01:Simulation</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group.alarms_1</name>
+    <x>661</x>
+    <y>90</y>
+    <height>341</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>group.alarms.border_1</name>
+      <width>300</width>
+      <height>330</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>group.alarms.background_1</name>
+      <x>5</x>
+      <y>35</y>
+      <width>290</width>
+      <height>288</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color name="PRIMARY-GROUP-BORDER" red="151" green="188" blue="202">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_ALARMS_1</name>
+      <text>ALARMS</text>
+      <width>300</width>
+      <height>35</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="GRAY-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <transparent>false</transparent>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <rules>
+        <rule name="BackgroundColor" prop_id="background_color" out_exp="false">
+          <exp bool_exp="pv0 == 1">
+            <value>
+              <color name="MAJOR" red="252" green="13" blue="27">
+              </color>
+            </value>
+          </exp>
+          <exp bool_exp="pv0 == 0">
+            <value>
+              <color name="GROUP-BORDER" red="150" green="155" blue="151">
+              </color>
+            </value>
+          </exp>
+          <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:GroupAlarm</pv_name>
+        </rule>
+      </rules>
+      <tooltip>Group alarm</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_ALM_OpeningTimeOut_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Opening_TimeOut</pv_name>
+      <x>25</x>
+      <y>50</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <tooltip>$(pv_name)
+$(pv_value)
+This error turns on whenevr Opening time passes the threshold.</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_ALM_OpeningTimeOut_1</name>
+      <text>Opening Timeout</text>
+      <x>60</x>
+      <y>50</y>
+      <width>155</width>
+      <height>26</height>
+      <foreground_color>
+        <color name="TEXT" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>This error turns on whenevr Opening time passes the threshold.</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>TEXT_OpeningTime_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpeningTimeElapsed</pv_name>
+      <x>190</x>
+      <y>50</y>
+      <width>45</width>
+      <height>25</height>
+      <font>
+        <font name="TINY-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-BORDER" red="121" green="121" blue="121">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)
+Elapsed Opening time </tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_ALM_ClosingTimeOut_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Closing_TimeOut</pv_name>
+      <x>25</x>
+      <y>85</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <tooltip>$(pv_name)
+$(pv_value)
+This error turns on whenevr Closing time passes the threshold.</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_ALM_ClosingTimeOut_3</name>
+      <text>Closing Timeout</text>
+      <x>60</x>
+      <y>85</y>
+      <width>155</width>
+      <height>25</height>
+      <foreground_color>
+        <color name="TEXT" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>This error turns on whenevr Closing time passes the threshold.</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>TEXT_ClosingTime_3</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:ClosingTimeElapsed</pv_name>
+      <x>190</x>
+      <y>85</y>
+      <width>45</width>
+      <height>25</height>
+      <font>
+        <font name="TINY-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-BORDER" red="121" green="121" blue="121">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)
+Elapsed Closing time </tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED_ALM_IO_Error_1</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:LimitSwitchAlarm</pv_name>
+      <x>25</x>
+      <y>120</y>
+      <width>25</width>
+      <height>25</height>
+      <off_color>
+        <color name="Grid" red="169" green="169" blue="169">
+        </color>
+      </off_color>
+      <on_color>
+        <color name="MAJOR" red="252" green="13" blue="27">
+        </color>
+      </on_color>
+      <tooltip>$(pv_name)
+$(pv_value)
+This error turns on whenevr both limit switches (Opened and Closed) become ON.</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>LB_ALM_IO_Error_1</name>
+      <text>Limit Switch Error</text>
+      <x>60</x>
+      <y>120</y>
+      <width>155</width>
+      <height>25</height>
+      <foreground_color>
+        <color name="TEXT" red="25" green="25" blue="25">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <vertical_alignment>1</vertical_alignment>
+      <tooltip>This error turns on whenevr both limit switches (Opened and Closed) become ON.</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>TEXT_OpeningTime_2</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpeningTimeThreshold</pv_name>
+      <x>242</x>
+      <y>50</y>
+      <width>45</width>
+      <height>25</height>
+      <font>
+        <font name="TINY-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-BORDER" red="121" green="121" blue="121">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)
+Opening time threshold</tooltip>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>TEXT_ClosingTime_4</name>
+      <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:ClosingTimeThreshold</pv_name>
+      <x>242</x>
+      <y>85</y>
+      <width>45</width>
+      <height>25</height>
+      <font>
+        <font name="TINY-SANS-PLAIN" family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-BORDER" red="121" green="121" blue="121">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <tooltip>$(pv_name)
+$(pv_value)
+Closing time threshold</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>BTN_ACK_1</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_AckAlarm</pv_name>
+          <value>1</value>
+          <description>Acknowledge alarms</description>
+        </action>
+      </actions>
+      <text>Acknowledge Alarm</text>
+      <x>17</x>
+      <y>277</y>
+      <width>267</width>
+      <height>33</height>
+      <background_color>
+        <color name="ORANGE" red="254" green="194" blue="81">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="EnableRule" prop_id="enabled" out_exp="false">
+          <exp bool_exp="(pv0 == 0) || (pv1 == 1)">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="(pv0 == 1) &amp;&amp; (pv1 == 0)">
+            <value>true</value>
+          </exp>
+          <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:GroupAlarm</pv_name>
+          <pv_name>loc://${SecSub}:${Dis}-${Dev}-${Index}:EnaForceUnlock</pv_name>
+        </rule>
+      </rules>
+      <tooltip>Acknowledge alarms</tooltip>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>buttons.bar_1</name>
+    <x>39</x>
+    <y>441</y>
+    <width>920</width>
+    <height>80</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>BTN_AUTO_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_Auto</pv_name>
+    <text>AUTO</text>
+    <x>43</x>
+    <y>482</y>
+    <width>200</width>
+    <height>33</height>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:EnableAutoBtn</pv_name>
+      </rule>
+    </rules>
+    <tooltip>AUTO operation mode</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>BTN_MANUAL_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_Manual</pv_name>
+    <text>MANUAL</text>
+    <x>248</x>
+    <y>483</y>
+    <width>200</width>
+    <height>33</height>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0 == 0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pv0 == 1">
+          <value>true</value>
+        </exp>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:EnableManualBtn</pv_name>
+      </rule>
+    </rules>
+    <tooltip>MANUAL operation mode</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>BTN_MAN_ON_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_ManuOpen</pv_name>
+    <text>OPEN</text>
+    <x>248</x>
+    <y>447</y>
+    <width>99</width>
+    <height>33</height>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="(pv0 == 0) || (pv1 == 1)">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="(pv0 == 1) &amp;&amp; (pv1 == 0)">
+          <value>true</value>
+        </exp>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpMode_Manual</pv_name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Opened</pv_name>
+      </rule>
+    </rules>
+    <tooltip>Manual OPEN</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>BTN_MAN_OFF_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_ManuClose</pv_name>
+    <text>CLOSE</text>
+    <x>349</x>
+    <y>447</y>
+    <width>99</width>
+    <height>33</height>
+    <rules>
+      <rule name="EnableRule" prop_id="enabled" out_exp="false">
+        <exp bool_exp="(pv0 == 0) || (pv1 == 1)">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="(pv0 == 1) &amp;&amp; (pv1 == 0)">
+          <value>true</value>
+        </exp>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpMode_Manual</pv_name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Closed</pv_name>
+      </rule>
+    </rules>
+    <tooltip>Manual CLOSE</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>SwitchFacePlate_Right</name>
+    <actions>
+      <action type="execute">
+        <script file="SwitchFacePlate.js">
+        </script>
+        <description>Switch Face Plate</description>
+      </action>
+    </actions>
+    <text>→</text>
+    <x>965</x>
+    <y>247</y>
+    <width>30</width>
+    <height>85</height>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <rules>
+      <rule name="Enable" prop_id="enabled" out_exp="false">
+        <exp bool_exp="pv0 == 1">
+          <value>false</value>
+        </exp>
+        <pv_name>loc://saeed123</pv_name>
+      </rule>
+    </rules>
+    <tooltip>Switch to next valve</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>SwitchFacePlate_Left</name>
+    <actions>
+      <action type="execute">
+        <script file="SwitchFacePlate.js">
+        </script>
+        <description>Switch Face Plate</description>
+      </action>
+    </actions>
+    <text>←</text>
+    <x>6</x>
+    <y>247</y>
+    <width>30</width>
+    <height>85</height>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <tooltip>Switch to previous valve</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>SwitchFacePlate_Up</name>
+    <actions>
+      <action type="execute">
+        <script file="SwitchFacePlate.js">
+        </script>
+        <description>Switch Face Plate</description>
+      </action>
+    </actions>
+    <text>↑</text>
+    <x>448</x>
+    <y>55</y>
+    <width>85</width>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <tooltip>Switch to He line 1</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>SwitchFacePlate_Down</name>
+    <actions>
+      <action type="execute">
+        <script file="SwitchFacePlate.js">
+        </script>
+        <description>Switch Face Plate</description>
+      </action>
+    </actions>
+    <text>↓</text>
+    <x>451</x>
+    <y>525</y>
+    <width>85</width>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="20.0">
+      </font>
+    </font>
+    <tooltip>Switch to He line 2</tooltip>
+  </widget>
+</display>

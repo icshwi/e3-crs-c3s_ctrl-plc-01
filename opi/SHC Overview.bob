@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>SHC_Overview</name>
+  <width>2330</width>
+  <height>1000</height>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_6</name>
+    <y>70</y>
+    <width>2330</width>
+    <height>310</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="200" green="205" blue="201" alpha="92">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_131</name>
+    <text>He Line 1</text>
+    <x>15</x>
+    <y>177</y>
+    <width>90</width>
+    <height>85</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_132</name>
+    <text>He Line 2</text>
+    <x>15</x>
+    <y>278</y>
+    <width>90</width>
+    <height>85</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_4</name>
+    <class>TITLE-BAR</class>
+    <width>2330</width>
+    <height>50</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>SHC Overview</text>
+    <x>20</x>
+    <width>380</width>
+    <height>50</height>
+    <font>
+      <font name="Header 1" family="Source Sans Pro" style="BOLD_ITALIC" size="36.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>OpMode</name>
+    <macros>
+      <Dev>PLC</Dev>
+      <Dis>Ctrl</Dis>
+      <Index>01</Index>
+      <SecSub>CrS-C3S</SecSub>
+    </macros>
+    <x>1250</x>
+    <y>750</y>
+    <width>920</width>
+    <height>230</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>MGGrey03-background_4</name>
+      <width>920</width>
+      <height>230</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>LGGrey02</name>
+      <x>15</x>
+      <y>20</y>
+      <width>285</width>
+      <height>190</height>
+      <style>3</style>
+      <widget type="label" version="2.0.0">
+        <name>LGGrey02-title</name>
+        <text>Automatic Mode Operation</text>
+        <width>285</width>
+        <height>40</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="GROUP-TEXT" red="25" green="25" blue="25">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="RED-BORDER" red="150" green="8" blue="16">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <description>Write PV</description>
+          </action>
+        </actions>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_AutoAll</pv_name>
+        <text>Change all to Auto</text>
+        <x>20</x>
+        <y>150</y>
+        <width>245</width>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>BTN_AUTO_2</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <description>Write PV</description>
+          </action>
+        </actions>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_OpAutoBeam</pv_name>
+        <text>Beam Mode</text>
+        <x>20</x>
+        <y>60</y>
+        <width>150</width>
+        <height>35</height>
+        <tooltip>AUTO operation mode</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>BTN_AUTO_3</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <description>Write PV</description>
+          </action>
+        </actions>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_OpAutoMaint</pv_name>
+        <text>Maintenance Mode</text>
+        <x>20</x>
+        <y>102</y>
+        <width>150</width>
+        <height>35</height>
+        <tooltip>AUTO operation mode</tooltip>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_1</name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpMode_AutoBeam</pv_name>
+        <x>190</x>
+        <y>67</y>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_2</name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:OpMode_AutoMaint</pv_name>
+        <x>190</x>
+        <y>109</y>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>LGGrey02_1</name>
+      <x>315</x>
+      <y>20</y>
+      <width>285</width>
+      <height>190</height>
+      <style>3</style>
+      <widget type="label" version="2.0.0">
+        <name>LGGrey02-title_1</name>
+        <text>Lock the Operation Mode</text>
+        <width>285</width>
+        <height>40</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="GROUP-TEXT" red="25" green="25" blue="25">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="RED-BORDER" red="150" green="8" blue="16">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>BTN_MANUAL_2</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <description>Write PV</description>
+          </action>
+        </actions>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_LockOpModeOn</pv_name>
+        <text>Lock ON</text>
+        <x>30</x>
+        <y>80</y>
+        <width>90</width>
+        <height>33</height>
+        <rules>
+          <rule name="EnableRule" prop_id="enabled" out_exp="false">
+            <exp bool_exp="(pv0 == 1)">
+              <value>false</value>
+            </exp>
+            <exp bool_exp="(pv0 == 0)">
+              <value>true</value>
+            </exp>
+            <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Lock_OpMode</pv_name>
+          </rule>
+        </rules>
+        <tooltip>MANUAL operation mode</tooltip>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>BTN_MANUAL_3</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <description>Write PV</description>
+          </action>
+        </actions>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_LockOpModeOff</pv_name>
+        <text>Lock OFF</text>
+        <x>30</x>
+        <y>122</y>
+        <width>90</width>
+        <height>33</height>
+        <rules>
+          <rule name="EnableRule" prop_id="enabled" out_exp="false">
+            <exp bool_exp="(pv0 == 0)">
+              <value>false</value>
+            </exp>
+            <exp bool_exp="(pv0 == 1)">
+              <value>true</value>
+            </exp>
+            <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Lock_OpMode</pv_name>
+          </rule>
+        </rules>
+        <tooltip>MANUAL operation mode</tooltip>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_1</name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Lock_OpMode</pv_name>
+        <x>140</x>
+        <y>80</y>
+        <height>33</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>LGGrey02_2</name>
+      <x>620</x>
+      <y>20</y>
+      <width>285</width>
+      <height>190</height>
+      <style>3</style>
+      <widget type="label" version="2.0.0">
+        <name>LGGrey02-title_2</name>
+        <text>Global Alarm</text>
+        <width>285</width>
+        <height>40</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="GROUP-TEXT" red="25" green="25" blue="25">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="RED-BORDER" red="150" green="8" blue="16">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>BTN_MANUAL_7</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+            <description>Write PV</description>
+          </action>
+        </actions>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:Cmd_GlobalAlarmAck</pv_name>
+        <text>Acknowledge all</text>
+        <x>35</x>
+        <y>113</y>
+        <width>215</width>
+        <height>42</height>
+        <tooltip>MANUAL operation mode</tooltip>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED Template_21</name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:GlobalAlarm</pv_name>
+        <x>35</x>
+        <y>67</y>
+        <width>175</width>
+        <height>30</height>
+        <off_label>Global Alarm</off_label>
+        <off_color>
+          <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+          </color>
+        </off_color>
+        <on_label>Global Alarm</on_label>
+        <on_color>
+          <color name="LED-RED-ON" red="255" green="60" blue="46">
+          </color>
+        </on_color>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="12.0">
+          </font>
+        </font>
+        <square>true</square>
+        <actions>
+        </actions>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update</name>
+        <pv_name>${SecSub}:${Dis}-${Dev}-${Index}:GroupAlarmsCount</pv_name>
+        <x>220</x>
+        <y>67</y>
+        <width>30</width>
+        <height>30</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <tooltip>$(pv_name)
+$(pv_value)
+Number of Group alarms</tooltip>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Arrow_1</name>
+    <x>1405</x>
+    <y>100</y>
+    <width>21</width>
+    <height>22</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polygon" version="2.0.0">
+      <name>Polygon_16</name>
+      <x>10</x>
+      <width>11</width>
+      <height>22</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <points>
+        <point x="10.0" y="10.0">
+        </point>
+        <point x="0.0" y="20.0">
+        </point>
+        <point x="0.0" y="0.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_133</name>
+    <text>Cryomodule</text>
+    <x>5</x>
+    <y>136</y>
+    <height>40</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Spoke</name>
+    <macros>
+      <Dev>PV</Dev>
+      <Dis>Cryo</Dis>
+      <Sec>Spk</Sec>
+    </macros>
+    <x>120</x>
+    <y>90</y>
+    <width>1285</width>
+    <height>275</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_40</name>
+      <width>1285</width>
+      <height>40</height>
+      <line_width>4</line_width>
+      <line_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>8</corner_width>
+      <corner_height>8</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_125</name>
+      <text>Spoke</text>
+      <width>1285</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_01</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>010</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_26</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>020</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>100</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_27</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>030</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>200</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_28</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>040</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>300</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_29</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>050</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>400</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_31</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>070</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>600</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_35</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>110</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1000</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_30</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>060</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>500</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_32</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>080</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>700</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_33</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>090</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>800</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_34</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>100</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>900</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_36</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>120</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1100</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_37</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>130</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1200</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>MBL_1</name>
+    <macros>
+      <Dev>PV</Dev>
+      <Dis>Cryo</Dis>
+      <Sec>MBL</Sec>
+    </macros>
+    <x>1426</x>
+    <y>90</y>
+    <width>884</width>
+    <height>275</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_41</name>
+      <width>885</width>
+      <height>40</height>
+      <line_width>4</line_width>
+      <line_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>8</corner_width>
+      <corner_height>8</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_126</name>
+      <text>Medium β</text>
+      <width>885</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_39</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>010</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_40</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>020</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>100</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_41</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>030</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>200</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_42</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>040</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>300</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_43</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>050</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>400</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_44</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>070</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>600</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_46</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>060</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>500</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_47</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>080</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>700</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_48</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>090</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>800</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_64</name>
+    <y>409</y>
+    <width>2330</width>
+    <height>310</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="200" green="205" blue="201" alpha="92">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_134</name>
+    <text>He Line 1</text>
+    <y>516</y>
+    <width>90</width>
+    <height>85</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_135</name>
+    <text>He Line 2</text>
+    <y>617</y>
+    <width>90</width>
+    <height>85</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_136</name>
+    <text>Cryomodule</text>
+    <y>475</y>
+    <height>40</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Spoke_2</name>
+    <macros>
+      <Dev>PV</Dev>
+      <Dis>Cryo</Dis>
+      <Sec>HBL</Sec>
+    </macros>
+    <x>120</x>
+    <y>429</y>
+    <width>2091</width>
+    <height>275</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_65</name>
+      <width>2091</width>
+      <height>40</height>
+      <line_width>4</line_width>
+      <line_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_width>8</corner_width>
+      <corner_height>8</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_137</name>
+      <text>High β</text>
+      <width>2091</width>
+      <height>40</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_58</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>110</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1000</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_62</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>100</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>900</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_63</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>120</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1100</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_64</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>130</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1200</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_52</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>010</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_53</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>020</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>100</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_54</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>030</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>200</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_55</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>040</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>300</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_56</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>050</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>400</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_57</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>070</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>600</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_59</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>060</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>500</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_60</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>080</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>700</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_61</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>090</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>800</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_74</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>140</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1300</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_75</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>150</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1400</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_76</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>160</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1500</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_77</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>170</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1600</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_78</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>180</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1700</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_79</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>190</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1800</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_80</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>200</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>1900</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display_88</name>
+      <file>PV_VALVE_BlockIcon_2.bob</file>
+      <macros>
+        <CRM_N>210</CRM_N>
+        <WIDDev>$(Dev)</WIDDev>
+        <WIDDis>$(Dis)</WIDDis>
+        <WIDSec>$(Sec)</WIDSec>
+      </macros>
+      <x>2000</x>
+      <y>45</y>
+      <width>85</width>
+      <height>230</height>
+      <resize>2</resize>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED Template_20</name>
+    <pv_name>CrS-C3S:Ctrl-PLC-01:Simulation</pv_name>
+    <x>2180</x>
+    <y>10</y>
+    <width>121</width>
+    <height>30</height>
+    <off_label>SIMULATION OFF</off_label>
+    <off_color>
+      <color name="LED-GREEN-ON" red="70" green="255" blue="70">
+      </color>
+    </off_color>
+    <on_label>SIMULATION ON</on_label>
+    <on_color>
+      <color name="LED-YELLOW-ON" red="255" green="235" blue="17">
+      </color>
+    </on_color>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <square>true</square>
+    <actions>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

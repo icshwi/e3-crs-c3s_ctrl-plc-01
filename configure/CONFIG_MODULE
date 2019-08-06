@@ -1,0 +1,18 @@
+#
+EPICS_MODULE_NAME:=crs-c3s_ctrl-plc-01
+
+E3_MODULE_VERSION:=plcfactory
+
+MODBUS_DEP_VERSION:=2.11.0p
+S7PLC_DEP_VERSION:=1.4.0p
+
+#
+# In most case, we don't need to touch the following variables.
+#
+
+E3_MODULE_NAME:=$(EPICS_MODULE_NAME)
+E3_MODULE_SRC_PATH:=$(EPICS_MODULE_NAME)-loc
+E3_MODULE_MAKEFILE:=module.Makefile
+
+# The definitions shown below can also be placed in an untracked CONFIG_MODULE.local
+-include $(TOP)/configure/CONFIG_MODULE.local

@@ -1,0 +1,101 @@
+###################################### Cryo Systems ########################################
+##############################  Cryogenics Moderator System   ##############################
+##                         CrS-CMS:CRYO: PV - Remote On/Off valve
+##
+############################         Version: 1.2             ######################################
+# Author:  Miklos Boros
+# Date:    28-02-2019
+# Version: v1.2
+# Changes: 
+# 1. Major review, 
+# 2. Indent,  unit standardization
+############################         Version: 1.1             ######################################
+# Author:  Miklos Boros, Marino Vojneski 
+# Date:    12-06-2018
+# Version: v1.1
+# Changes: 
+# 1. Modified Alarm Signal section to be compatible with new format.
+############################ Version: 1.0             ######################################
+# Author:  Miklos Boros 
+# Date:    08-01-2018
+# Version: v1.0
+
+
+
+############################
+#  STATUS BLOCK
+############################ 
+define_status_block()
+
+#Operation modes
+add_digital("OpMode_Auto",             PV_DESC="Operation Mode Auto",      PV_ONAM="True",           PV_ZNAM="False")
+add_digital("OpMode_Manual",           PV_DESC="Operation Mode Manual",    PV_ONAM="True",           PV_ZNAM="False")
+																		   
+#Valve physical states
+add_digital("Opened",                  PV_DESC="Valve Opened",             PV_ONAM="True",           PV_ZNAM="False")
+add_digital("Closed",                  PV_DESC="Valve Closed",             PV_ONAM="True",           PV_ZNAM="False")
+add_digital("Opening",                 PV_DESC="Valve is opening",         PV_ONAM="True",           PV_ZNAM="False")
+add_digital("Closing",                 PV_DESC="Valve is closing",         PV_ONAM="True",           PV_ZNAM="False")
+add_digital("Moving",                  PV_DESC="Opening OR Closing",       PV_ONAM="True",           PV_ZNAM="False")
+
+add_digital("OpenSolenoid",            PV_DESC="Open Solenoid energized",  PV_ONAM="True",           PV_ZNAM="False")
+add_digital("CloseSolenoid",           PV_DESC="Close Solenoid energized", PV_ONAM="True",           PV_ZNAM="False")
+
+add_analog("ValveColor",               "INT",                              PV_DESC="BlockIcon valve color")
+add_analog("SolenoidColor",            "INT",                              PV_DESC="BlockIcon solenoid color")
+
+#Inhibit signals (set by the PLC code, can't be changed by the OPI)        
+add_digital("Inhibit_Lock",            PV_DESC="Inhibit Locking",          PV_ONAM="InhibitLocking", PV_ZNAM="AllowLocking")
+
+																		   
+#for OPI visualisation                                                     
+add_digital("EnableAutoBtn",           PV_DESC="Enable Auto Button",       PV_ONAM="True",           PV_ZNAM="False")
+add_digital("EnableManualBtn",         PV_DESC="Enable Manual Button",     PV_ONAM="True",           PV_ZNAM="False")
+																		   
+#Locking mechanism                                                         
+add_digital("DevLocked",               PV_DESC="Device Locked",            PV_ONAM="True",           PV_ZNAM="False")
+add_analog("Faceplate_LockID",         "DINT",                             PV_DESC="Owner Lock ID")
+add_analog("BlockIcon_LockID",         "DINT",                             PV_DESC="Guest Lock ID")
+																		   
+#Alarm signals                                                             
+add_major_alarm("GroupAlarm",          "Group Alarm",                      PV_ZNAM="NominalState")
+add_major_alarm("Opening_TimeOut",     "Opening Time Out",                 PV_ZNAM="NominalState")
+add_major_alarm("Closing_TimeOut",     "Closing Time Out",                 PV_ZNAM="NominalState")
+add_major_alarm("LimitSwitchAlarm",    "Both limit switches hit",          PV_ZNAM="NominalState")
+
+
+#OPI timeouts
+add_time("OpeningTimeThreshold",       PV_DESC="Maximum Opening Time")
+add_time("ClosingTimeThreshold",       PV_DESC="Maximum Closing Time")
+add_time("OpeningTimeElapsed",         PV_DESC="Elapsed Opening Time")
+add_time("ClosingTimeElapsed",         PV_DESC="Elapsed Closing Time")
+
+add_time("SolPulseDuration",           PV_DESC="Solenoid Pulse Duration")
+
+
+############################
+#  COMMAND BLOCK
+############################ 
+define_command_block()
+
+#OPI buttons
+add_digital("Cmd_Auto",                PV_DESC="CMD: Auto Mode")
+add_digital("Cmd_Manual",              PV_DESC="CMD: Manual Mode")
+add_digital("Cmd_ManuOpen",            PV_DESC="CMD: Manual Open")
+add_digital("Cmd_ManuClose",           PV_DESC="CMD: Manual Close")
+
+
+add_digital("Cmd_AckAlarm",            PV_DESC="CMD: Acknowledge Alarm")
+
+add_digital("Cmd_ForceUnlock",         PV_DESC="CMD: Force Unlock Device")
+add_digital("Cmd_DevLock",             PV_DESC="CMD: Lock Device")
+add_digital("Cmd_DevUnlock",           PV_DESC="CMD: Unlock Device")
+
+############################
+#  PARAMETER BLOCK
+############################ 
+define_parameter_block()
+
+#Locking mechanism
+add_analog("P_Faceplate_LockID",       "DINT",                          PV_DESC="Device ID after Lock")
+add_analog("P_BlockIcon_LockID",       "DINT",                          PV_DESC="Device ID after Blockicon Open")

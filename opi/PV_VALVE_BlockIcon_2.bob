@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>PV_VALVE_BlockIcon_2</name>
+  <macros>
+    <WIDSecSub>$(WIDSec)-$(CRM_N)SHC</WIDSecSub>
+  </macros>
+  <width>85</width>
+  <height>230</height>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>85</width>
+    <height>230</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color name="BLUE-GROUP-BORDER" red="138" green="167" blue="167">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_130</name>
+    <text>$(CRM_N)</text>
+    <width>85</width>
+    <height>40</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display</name>
+    <file>PV_VALVE_BlockIcon_1.bob</file>
+    <macros>
+      <WIDIndex>55090</WIDIndex>
+    </macros>
+    <y>50</y>
+    <width>85</width>
+    <height>75</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Embedded Display_1</name>
+    <file>PV_VALVE_BlockIcon_1.bob</file>
+    <macros>
+      <WIDIndex>55091</WIDIndex>
+    </macros>
+    <y>150</y>
+    <width>85</width>
+    <height>75</height>
+    <resize>2</resize>
+    <transparent>true</transparent>
+  </widget>
+</display>
